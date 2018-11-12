@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		3E02351B216FF23000F58ACB /* SuggestedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E02351A216FF23000F58ACB /* SuggestedPageViewController.swift */; };
 		3E02351D216FF8B000F58ACB /* SuggestedContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E02351C216FF8B000F58ACB /* SuggestedContentViewController.swift */; };
+		3E3CD49A2199C19900D94669 /* ProfuctDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3CD4992199C19900D94669 /* ProfuctDetailViewCell.swift */; };
+		3E3CD49C2199C46E00D94669 /* ProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3CD49B2199C46E00D94669 /* ProductsTableViewController.swift */; };
 		3E5FCE8E2176733300FD5DD8 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5FCE8D2176733300FD5DD8 /* ProductDetailViewController.swift */; };
 		3E5FCE922176772F00FD5DD8 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5FCE912176772F00FD5DD8 /* ProductDetailView.swift */; };
+		3E7721F221983BFA00A18695 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7721F121983BFA00A18695 /* MainMenuViewController.swift */; };
 		3E78A9F2216F99580058B790 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E78A9F1216F99580058B790 /* AppDelegate.swift */; };
 		3E78A9F4216F99580058B790 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E78A9F3216F99580058B790 /* ViewController.swift */; };
 		3E78A9F7216F99590058B790 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E78A9F5216F99590058B790 /* Main.storyboard */; };
@@ -44,8 +47,11 @@
 /* Begin PBXFileReference section */
 		3E02351A216FF23000F58ACB /* SuggestedPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedPageViewController.swift; sourceTree = "<group>"; };
 		3E02351C216FF8B000F58ACB /* SuggestedContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedContentViewController.swift; sourceTree = "<group>"; };
+		3E3CD4992199C19900D94669 /* ProfuctDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfuctDetailViewCell.swift; sourceTree = "<group>"; };
+		3E3CD49B2199C46E00D94669 /* ProductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewController.swift; sourceTree = "<group>"; };
 		3E5FCE8D2176733300FD5DD8 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		3E5FCE912176772F00FD5DD8 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		3E7721F121983BFA00A18695 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		3E78A9EE216F99580058B790 /* TheGameShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheGameShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E78A9F1216F99580058B790 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E78A9F3216F99580058B790 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +164,7 @@
 			children = (
 				3ECA2D972170F2BC00D563EA /* PopularCollectionCell.swift */,
 				3E5FCE912176772F00FD5DD8 /* ProductDetailView.swift */,
+				3E3CD4992199C19900D94669 /* ProfuctDetailViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -168,6 +175,8 @@
 				3ECA2D992170F3D800D563EA /* Suggested */,
 				3ECA2D952170F29400D563EA /* PopularCollectionViewController.swift */,
 				3E5FCE8D2176733300FD5DD8 /* ProductDetailViewController.swift */,
+				3E7721F121983BFA00A18695 /* MainMenuViewController.swift */,
+				3E3CD49B2199C46E00D94669 /* ProductsTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -249,13 +258,16 @@
 				TargetAttributes = {
 					3E78A9ED216F99580058B790 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 					};
 					3E78AA01216F99740058B790 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = 3E78A9ED216F99580058B790;
 					};
 					3E78AA0C216F99740058B790 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = 3E78A9ED216F99580058B790;
 					};
 				};
@@ -314,12 +326,15 @@
 			files = (
 				3E02351B216FF23000F58ACB /* SuggestedPageViewController.swift in Sources */,
 				3E5FCE922176772F00FD5DD8 /* ProductDetailView.swift in Sources */,
+				3E7721F221983BFA00A18695 /* MainMenuViewController.swift in Sources */,
+				3E3CD49A2199C19900D94669 /* ProfuctDetailViewCell.swift in Sources */,
 				3E78A9F4216F99580058B790 /* ViewController.swift in Sources */,
 				3E5FCE8E2176733300FD5DD8 /* ProductDetailViewController.swift in Sources */,
 				3E78A9F2216F99580058B790 /* AppDelegate.swift in Sources */,
 				3ECA2D962170F29400D563EA /* PopularCollectionViewController.swift in Sources */,
 				3E78AA21216F9B300058B790 /* gameModel.swift in Sources */,
 				3E02351D216FF8B000F58ACB /* SuggestedContentViewController.swift in Sources */,
+				3E3CD49C2199C46E00D94669 /* ProductsTableViewController.swift in Sources */,
 				3ECA2D982170F2BC00D563EA /* PopularCollectionCell.swift in Sources */,
 				3E78AA23216F9D920058B790 /* gameModelData.swift in Sources */,
 			);
@@ -502,7 +517,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = s.TheGameShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -519,7 +534,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = s.TheGameShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -538,7 +553,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = s.TheGameShopTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheGameShop.app/TheGameShop";
 			};
@@ -558,7 +573,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = s.TheGameShopTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheGameShop.app/TheGameShop";
 			};
@@ -577,7 +592,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = s.TheGameShopUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = TheGameShop;
 			};
@@ -596,7 +611,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = s.TheGameShopUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = TheGameShop;
 			};
