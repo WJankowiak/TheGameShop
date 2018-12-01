@@ -1,0 +1,45 @@
+//
+//  BasketTableViewController.swift
+//  TheGameShop
+//
+//  Created by Wojciech Jankowiak on 17/11/2018.
+//  Copyright © 2018 Wojciech Jankowiak. All rights reserved.
+//
+
+import UIKit
+
+class BasketTableViewController: UITableViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.tableFooterView = UIView()
+    }
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return basketGames.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print ("size",basketGames.count)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BasketCell", for: indexPath) as! BasketCell
+        cell.img.image = UIImage(named: basketGames[indexPath.row].imageName)
+        cell.name.text = basketGames[indexPath.row].name
+        cell.price.text = String(format:"%.2f zł",basketGames[indexPath.row].price)
+
+        return cell
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            basketGames.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+        }
+    }
+    
+
+}

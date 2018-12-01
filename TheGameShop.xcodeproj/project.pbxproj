@@ -9,10 +9,14 @@
 /* Begin PBXBuildFile section */
 		3E02351B216FF23000F58ACB /* SuggestedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E02351A216FF23000F58ACB /* SuggestedPageViewController.swift */; };
 		3E02351D216FF8B000F58ACB /* SuggestedContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E02351C216FF8B000F58ACB /* SuggestedContentViewController.swift */; };
+		3E38E26C21A16376004254F9 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38E26B21A16376004254F9 /* FilterViewController.swift */; };
 		3E3CD49A2199C19900D94669 /* ProfuctDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3CD4992199C19900D94669 /* ProfuctDetailViewCell.swift */; };
 		3E3CD49C2199C46E00D94669 /* ProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3CD49B2199C46E00D94669 /* ProductsTableViewController.swift */; };
 		3E5FCE8E2176733300FD5DD8 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5FCE8D2176733300FD5DD8 /* ProductDetailViewController.swift */; };
 		3E5FCE922176772F00FD5DD8 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5FCE912176772F00FD5DD8 /* ProductDetailView.swift */; };
+		3E624B3D21A081FA005D5F04 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E624B3C21A081FA005D5F04 /* BasketViewController.swift */; };
+		3E624B4021A08808005D5F04 /* BasketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E624B3F21A08808005D5F04 /* BasketCell.swift */; };
+		3E71595421AD781000DA9C38 /* BasketTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E71595321AD781000DA9C38 /* BasketTableViewController.swift */; };
 		3E7721F221983BFA00A18695 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7721F121983BFA00A18695 /* MainMenuViewController.swift */; };
 		3E78A9F2216F99580058B790 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E78A9F1216F99580058B790 /* AppDelegate.swift */; };
 		3E78A9F4216F99580058B790 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E78A9F3216F99580058B790 /* ViewController.swift */; };
@@ -47,10 +51,14 @@
 /* Begin PBXFileReference section */
 		3E02351A216FF23000F58ACB /* SuggestedPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedPageViewController.swift; sourceTree = "<group>"; };
 		3E02351C216FF8B000F58ACB /* SuggestedContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedContentViewController.swift; sourceTree = "<group>"; };
+		3E38E26B21A16376004254F9 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		3E3CD4992199C19900D94669 /* ProfuctDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfuctDetailViewCell.swift; sourceTree = "<group>"; };
 		3E3CD49B2199C46E00D94669 /* ProductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewController.swift; sourceTree = "<group>"; };
 		3E5FCE8D2176733300FD5DD8 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		3E5FCE912176772F00FD5DD8 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		3E624B3C21A081FA005D5F04 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		3E624B3F21A08808005D5F04 /* BasketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketCell.swift; sourceTree = "<group>"; };
+		3E71595321AD781000DA9C38 /* BasketTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketTableViewController.swift; sourceTree = "<group>"; };
 		3E7721F121983BFA00A18695 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		3E78A9EE216F99580058B790 /* TheGameShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheGameShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E78A9F1216F99580058B790 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +104,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E624B3E21A086F5005D5F04 /* Basket */ = {
+			isa = PBXGroup;
+			children = (
+				3E71595321AD781000DA9C38 /* BasketTableViewController.swift */,
+				3E624B3C21A081FA005D5F04 /* BasketViewController.swift */,
+			);
+			path = Basket;
+			sourceTree = "<group>";
+		};
 		3E78A9E5216F99550058B790 = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +182,7 @@
 				3ECA2D972170F2BC00D563EA /* PopularCollectionCell.swift */,
 				3E5FCE912176772F00FD5DD8 /* ProductDetailView.swift */,
 				3E3CD4992199C19900D94669 /* ProfuctDetailViewCell.swift */,
+				3E624B3F21A08808005D5F04 /* BasketCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,11 +190,13 @@
 		3E78AA25216FAF2B0058B790 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3E624B3E21A086F5005D5F04 /* Basket */,
 				3ECA2D992170F3D800D563EA /* Suggested */,
 				3ECA2D952170F29400D563EA /* PopularCollectionViewController.swift */,
 				3E5FCE8D2176733300FD5DD8 /* ProductDetailViewController.swift */,
 				3E7721F121983BFA00A18695 /* MainMenuViewController.swift */,
 				3E3CD49B2199C46E00D94669 /* ProductsTableViewController.swift */,
+				3E38E26B21A16376004254F9 /* FilterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -324,9 +344,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E624B3D21A081FA005D5F04 /* BasketViewController.swift in Sources */,
+				3E71595421AD781000DA9C38 /* BasketTableViewController.swift in Sources */,
 				3E02351B216FF23000F58ACB /* SuggestedPageViewController.swift in Sources */,
 				3E5FCE922176772F00FD5DD8 /* ProductDetailView.swift in Sources */,
+				3E38E26C21A16376004254F9 /* FilterViewController.swift in Sources */,
 				3E7721F221983BFA00A18695 /* MainMenuViewController.swift in Sources */,
+				3E624B4021A08808005D5F04 /* BasketCell.swift in Sources */,
 				3E3CD49A2199C19900D94669 /* ProfuctDetailViewCell.swift in Sources */,
 				3E78A9F4216F99580058B790 /* ViewController.swift in Sources */,
 				3E5FCE8E2176733300FD5DD8 /* ProductDetailViewController.swift in Sources */,

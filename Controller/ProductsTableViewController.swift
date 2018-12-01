@@ -7,79 +7,106 @@
 //
 
 import UIKit
-
-class ProductsTableViewController: UITableViewController {
-    var products : [Game] = []
+class ProductsTableViewController: UITableViewController, filterDelegate {
    
+    func setFilters(contents: [String]) {
+        self.filters = contents
+    }
+    
+    var products : [Game] = []
+    var filteredProducts : [Game] = []
+    var filters : [String]?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        filteredProducts = products
+        tableView.tableFooterView = UIView()
     }
 
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let receivedFilters = filters
+        {
+            print (receivedFilters.count)
+            applyFilters(filters: receivedFilters)
+        }
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return products.count
+        return filteredProducts.count
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! ProductDetailViewCell
-        cell.img.image = UIImage(named: products[indexPath.row].imageName)
-        cell.name.text = products[indexPath.row].name
-        cell.price.text = String(format:"%.2f zł",products[indexPath.row].price)
-        cell.platform.text = products[indexPath.row].platform
+        cell.img.image = UIImage(named: filteredProducts[indexPath.row].imageName)
+        cell.name.text = filteredProducts[indexPath.row].name
+        cell.price.text = String(format:"%.2f zł",filteredProducts[indexPath.row].price)
+        cell.platform.text = filteredProducts[indexPath.row].platform
         
         return cell
     }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "showProductDetail" {
+            if let indexPath = tableView?.indexPathForSelectedRow {
+                let destinationController = segue.destination as! ProductDetailViewController
+                destinationController.product = filteredProducts[indexPath.row]
+            }
+        }
+        
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    @IBAction func goNext(_ sender: Any) {
+        filters = []
+        filteredProducts = products
+        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "FilterController")as! FilterViewController
+        secondViewController.delegate = self
+        self.navigationController?.pushViewController(secondViewController, animated: true)
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    func applyFilters(filters: [String]){
+        if (filters.count == 0) {
+            filteredProducts = products
+        } else {
+            applyPlatformFilter(filter: filters[0])
+            applyPriceFilter(filter: filters[1])
+            self.tableView.reloadData()
+        }
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    func applyPlatformFilter(filter: String){
+        for product in filteredProducts{
+            if (filter != product.platform) {
+                let index = filteredProducts.index{$0 === product}
+                filteredProducts.remove(at: index!)
+            }
+        }
+        print ("applied platform filter. Number of filtered: ", filteredProducts.count)
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func applyPriceFilter (filter: String){
+        let fil = (filter as NSString).floatValue
+        for product in filteredProducts{
+            if (fil <= product.price) {
+                let index = filteredProducts.index{$0 === product}
+                filteredProducts.remove(at: index!)
+            }
+        }
     }
-    */
-
+    
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let insertAction = UIContextualAction(style: .normal, title: "Do Koszyka") {(action, view, handler) in basketGames.append(self.filteredProducts[indexPath.row]) }
+        insertAction.backgroundColor = UIColor.green
+        let configuration = UISwipeActionsConfiguration (actions: [insertAction])
+        return configuration
+    }
 }
+
+
+
+

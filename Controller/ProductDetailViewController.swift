@@ -11,29 +11,29 @@ import UIKit
 class ProductDetailViewController: UIViewController {
     var product:  Game = Game()
     @IBOutlet var productView: ProductDetailView!
-
+    
+    @IBOutlet var test: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        print ("photo2", product.imageName)
         productView.img.image = UIImage (named: product.imageName)
         productView.name.text = product.name
+        productView.desc.text = product.description
+        productView.price.text = String(format:"%.2f zł",product.price)
     }
-        // Do any additional setup after loading the view.
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func addToBasket(sender: AnyObject) {
+        let alert = UIAlertController (title: "Na pewno?", message: "Jesteś pewien, że chcesz dodać ten produkt do koszyka?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "TAK", style: .default, handler:{ action in self.confirm()} ))
+        alert.addAction(UIAlertAction(title: "NIE", style: .default, handler: nil))
+        self.present(alert,animated: true)
     }
-    */
+    
+    func confirm(){
+        basketGames.append(product)
+    }
 
 }

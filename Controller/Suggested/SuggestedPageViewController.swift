@@ -15,7 +15,6 @@ class SuggestedPageViewController: UIViewController {
     var imageFile = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("The first controller instantiated with index=",index)
         contentImageView.image = UIImage(named : imageFile)
         // Do any additional setup after loading the view.
     }

@@ -12,6 +12,8 @@ class ProductDetailView: UIView {
 
     @IBOutlet var img: UIImageView!
     @IBOutlet var name : UILabel!
+    @IBOutlet var desc: UITextView!
+    @IBOutlet var price : UILabel!
     
     /*
     // Only override draw() if you perform custom drawing.
