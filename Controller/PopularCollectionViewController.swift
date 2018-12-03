@@ -44,16 +44,13 @@ class PopularCollectionViewController: UICollectionViewController {
         return cell
         
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if segue.identifier == "showProductDetail" {
             if let indexPath = collectionView?.indexPathsForSelectedItems?.first {
                 let destinationController = segue.destination as! ProductDetailViewController
                 destinationController.product = best[indexPath.row]
-                print ("photo", best[indexPath.row].imageName)
             }
         }
     }
-
 }

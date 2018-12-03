@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Diablo_III_RoS_Cover.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Diablo_III_RoS_Cover.jpg",
       "scale" : "2x"
     },
     {

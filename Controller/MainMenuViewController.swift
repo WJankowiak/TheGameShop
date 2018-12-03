@@ -18,8 +18,8 @@ class MainMenuViewController: UIViewController {
         MenuView.layer.shadowOpacity=1
         MenuView.layer.shadowRadius = 6
         MenuConstraint.constant = -326
-        //DatabaseManager.DeleteGames()
-        //DatabaseManager.createAndPopulate()
+        DatabaseManager.DeleteGames()
+        DatabaseManager.createAndPopulate()
     }
 
     @IBAction func toggleMenu(_ sender: Any) {
@@ -48,6 +48,10 @@ class MainMenuViewController: UIViewController {
         } else if segue.identifier == "StratSegue" {
             let destinationController = segue.destination as! ProductsTableViewController
             filtered = filterGames(type : "Strategy")
+            destinationController.products = filtered
+        } else if segue.identifier == "RacingSeque" {
+            let destinationController = segue.destination as! ProductsTableViewController
+            filtered = filterGames(type : "Racing")
             destinationController.products = filtered
         }
         

@@ -18,6 +18,9 @@ class ProductDetailViewController: UIViewController {
         productView.img.image = UIImage (named: product.imageName)
         productView.name.text = product.name
         productView.desc.text = product.description
+        productView.desc.isEditable = false
+        productView.desc.isScrollEnabled = true
+        productView.desc.isUserInteractionEnabled = true
         productView.price.text = String(format:"%.2f zł",product.price)
     }
 

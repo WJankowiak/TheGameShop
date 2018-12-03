@@ -161,7 +161,7 @@ class DatabaseManager {
         if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
             print ("Error opening database")
         }
-        let queryString = "UPDATE Games SET isInBasket = 1 WHERE name = \"\(game.name)\" LIMIT 1"
+        let queryString = "UPDATE Games SET isInBasket = 1 WHERE name = \"\(game.name)\""
         print(queryString)
         var stmt: OpaquePointer?
         
@@ -176,6 +176,6 @@ class DatabaseManager {
             let errmsg = String (cString: sqlite3_errmsg(db))
             print ("Error executing remove from basket: \(errmsg)")
         }
-        print ("REMOVED SUCCESFULLY")
+        print ("ADDED SUCCESFULLY")
     }
 }

@@ -19,7 +19,6 @@ class BasketViewController: UIViewController {
             price += pr.price
         }
         Price.text = String(format:"Suma %.2f zł",price)
-        // Do any additional setup after loading the view.
     }
     func changeTotal() {
         var total = Float(0)

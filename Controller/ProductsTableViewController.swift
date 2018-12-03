@@ -100,10 +100,20 @@ class ProductsTableViewController: UITableViewController, filterDelegate {
     }
     
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let insertAction = UIContextualAction(style: .normal, title: "Do Koszyka") {(action, view, handler) in basketGames.append(self.filteredProducts[indexPath.row]) }
+        let insertAction = UIContextualAction(style: .normal, title: "Do Koszyka") {(action, view, handler) in self.addToBasket(index: indexPath.row) }
         insertAction.backgroundColor = UIColor.green
         let configuration = UISwipeActionsConfiguration (actions: [insertAction])
         return configuration
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let configuration = UISwipeActionsConfiguration (actions: [])
+        return configuration
+    }
+
+    func addToBasket(index: Int) {
+        basketGames.append(self.filteredProducts[index])
+        DatabaseManager.addToBasket(game: self.filteredProducts[index])
     }
 }
 

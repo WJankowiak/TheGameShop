@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "rayman_legends.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "hamburger-512.png",
       "scale" : "2x"
     },
     {

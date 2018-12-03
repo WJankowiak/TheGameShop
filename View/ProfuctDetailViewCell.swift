@@ -11,7 +11,6 @@ import UIKit
 class ProductDetailViewCell: UITableViewCell {
     @IBOutlet var img : UIImageView!
     @IBOutlet var favourite : UIImageView!
-
     @IBOutlet var name : UILabel!
     @IBOutlet var price : UILabel!
     @IBOutlet var platform : UILabel!
