@@ -33,6 +33,7 @@ class ProductDetailViewController: UIViewController {
     }
     
     func confirm(){
+        DatabaseManager.addToBasket(game: product)
         basketGames.append(product)
     }
 

@@ -7,16 +7,19 @@
 //
 
 import UIKit
+import SQLite3
 
 class MainMenuViewController: UIViewController {
     @IBOutlet weak var MenuView: UIView!
     @IBOutlet weak var MenuConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         MenuView.layer.shadowOpacity=1
         MenuView.layer.shadowRadius = 6
         MenuConstraint.constant = -326
-        // Do any additional setup after loading the view.
+        //DatabaseManager.DeleteGames()
+        //DatabaseManager.createAndPopulate()
     }
 
     @IBAction func toggleMenu(_ sender: Any) {

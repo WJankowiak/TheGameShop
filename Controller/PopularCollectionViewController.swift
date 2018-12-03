@@ -11,8 +11,8 @@ import UIKit
 private let reuseIdentifier = "PopularCollectionCell"
 
 class PopularCollectionViewController: UICollectionViewController {
-    var data = gameModelData().gamesData
-    var best = gameModelData().gamesData
+    var data = DatabaseManager.getAllGames()
+    var best = DatabaseManager.getAllGames()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +39,10 @@ class PopularCollectionViewController: UICollectionViewController {
         let cellIdentifier = "PopularCell"
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! PopularCollectionCell
         cell.cover?.image = UIImage (named: data[indexPath.row].imageName)
-        cell.price.text = "Placeholder."
-        // Configure the cell
+        cell.price.text = data[indexPath.row].name
     
         return cell
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)

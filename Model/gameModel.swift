@@ -15,17 +15,18 @@ class Game {
     var price       : Float32
     var platform    : String
     var type        : String
-    
-    init(name_ : String, description_ : String, imageName_ : String, price_ : Float32, platform_ : String, type_ : String) {
+    var isInBasket  : Bool
+    init(name_ : String, description_ : String, imageName_ : String, price_ : Float32, platform_ : String, type_ : String, isInBasket_: Bool) {
         name = name_
         description = description_
         imageName = imageName_
         price = price_
         platform = platform_
         type = type_
+        isInBasket = isInBasket_
     }
     
     convenience init() {
-        self.init(name_: "", description_: "", imageName_: "", price_: 0, platform_: "", type_: "")
+        self.init(name_: "", description_: "", imageName_: "", price_: 0, platform_: "", type_: "", isInBasket_: false)
     }
 }

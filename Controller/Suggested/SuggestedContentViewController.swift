@@ -9,7 +9,7 @@
 import UIKit
 
 class SuggestedContentViewController: UIPageViewController, UIPageViewControllerDataSource {
-    var data = gameModelData().gamesData
+    var data = DatabaseManager.getAllGames()
     var currentIndex = 0
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         var index = (viewController as! SuggestedPageViewController).index

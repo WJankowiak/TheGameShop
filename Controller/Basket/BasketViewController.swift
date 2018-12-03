@@ -7,7 +7,7 @@
 //
 
 import UIKit
-var basketGames :[Game] = []
+var basketGames :[Game] = DatabaseManager.getBasketGames()
 
 class BasketViewController: UIViewController {
     var price: Float = 0

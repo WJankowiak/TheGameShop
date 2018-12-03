@@ -35,6 +35,8 @@ class BasketTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
+            print ("Starting to delete")
+            DatabaseManager.removeFromBasket(game: basketGames[indexPath.row])
             basketGames.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             
