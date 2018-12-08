@@ -12,6 +12,7 @@ import SQLite3
 class MainMenuViewController: UIViewController {
     @IBOutlet weak var MenuView: UIView!
     @IBOutlet weak var MenuConstraint: NSLayoutConstraint!
+    @IBOutlet weak var SearchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()

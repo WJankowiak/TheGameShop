@@ -29,7 +29,7 @@ class SuggestedContentViewController: UIPageViewController, UIPageViewController
         }
         let storyboard = UIStoryboard (name: "Main", bundle: nil)
         if let pageContentViewController = storyboard.instantiateViewController(withIdentifier: "SuggestedPageViewController") as? SuggestedPageViewController {
-            pageContentViewController.imageFile = data[index].imageName
+            pageContentViewController.product = data[index]
             pageContentViewController.index = index
             
             return pageContentViewController

@@ -81,14 +81,16 @@ class ProductsTableViewController: UITableViewController, filterDelegate {
         }
     }
     func applyPlatformFilter(filter: String){
-        for product in filteredProducts{
-            if (filter != product.platform) {
-                let index = filteredProducts.index{$0 === product}
-                filteredProducts.remove(at: index!)
+        if filter != "BRAK" {
+            for product in filteredProducts{
+                if (filter != product.platform) {
+                    let index = filteredProducts.index{$0 === product}
+                    filteredProducts.remove(at: index!)
+                }
             }
         }
-        print ("applied platform filter. Number of filtered: ", filteredProducts.count)
     }
+    
     func applyPriceFilter (filter: String){
         let fil = (filter as NSString).floatValue
         for product in filteredProducts{
@@ -103,6 +105,7 @@ class ProductsTableViewController: UITableViewController, filterDelegate {
         let insertAction = UIContextualAction(style: .normal, title: "Do Koszyka") {(action, view, handler) in self.addToBasket(index: indexPath.row) }
         insertAction.backgroundColor = UIColor.green
         let configuration = UISwipeActionsConfiguration (actions: [insertAction])
+        tableView.reloadData()
         return configuration
     }
     
@@ -116,7 +119,3 @@ class ProductsTableViewController: UITableViewController, filterDelegate {
         DatabaseManager.addToBasket(game: self.filteredProducts[index])
     }
 }
-
-
-
-
