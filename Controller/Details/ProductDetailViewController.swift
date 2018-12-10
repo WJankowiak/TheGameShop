@@ -9,19 +9,14 @@
 import UIKit
 
 class ProductDetailViewController: UIViewController {
-    var product:  Game = Game()
     @IBOutlet var productView: ProductDetailView!
     
-    @IBOutlet var test: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        productView.img.image = UIImage (named: product.imageName)
-        productView.name.text = product.name
-        productView.desc.text = product.description
-        productView.desc.isEditable = false
-        productView.desc.isScrollEnabled = true
-        productView.desc.isUserInteractionEnabled = true
-        productView.price.text = String(format:"%.2f zł",product.price)
+        
+        productView.img.image = UIImage (named: detailGame.imageName)
+        productView.name.text = detailGame.name
+        productView.price.text = String(format:"%.2f zł",detailGame.price)
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,8 +31,8 @@ class ProductDetailViewController: UIViewController {
     }
     
     func confirm(){
-        DatabaseManager.addToBasket(game: product)
-        basketGames.append(product)
+        DatabaseManager.addToBasket(game: detailGame)
+        basketGames.append(detailGame)
     }
 
 }

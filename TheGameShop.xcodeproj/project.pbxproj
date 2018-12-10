@@ -31,6 +31,10 @@
 		3E9112E521B495C100B35435 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9112E421B495C100B35435 /* DatabaseManager.swift */; };
 		3ECA2D962170F29400D563EA /* PopularCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECA2D952170F29400D563EA /* PopularCollectionViewController.swift */; };
 		3ECA2D982170F2BC00D563EA /* PopularCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECA2D972170F2BC00D563EA /* PopularCollectionCell.swift */; };
+		3EF739AB21BC15A0000BC787 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF739AA21BC15A0000BC787 /* DescriptionViewController.swift */; };
+		3EF739AD21BC174C000BC787 /* DetailsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF739AC21BC174C000BC787 /* DetailsTabViewController.swift */; };
+		3EF739AF21BC1AB5000BC787 /* DetailGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF739AE21BC1AB5000BC787 /* DetailGame.swift */; };
+		3EF739B321BC1EE7000BC787 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF739B221BC1EE7000BC787 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +85,10 @@
 		3E9112E421B495C100B35435 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		3ECA2D952170F29400D563EA /* PopularCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCollectionViewController.swift; sourceTree = "<group>"; };
 		3ECA2D972170F2BC00D563EA /* PopularCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCollectionCell.swift; sourceTree = "<group>"; };
+		3EF739AA21BC15A0000BC787 /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
+		3EF739AC21BC174C000BC787 /* DetailsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTabViewController.swift; sourceTree = "<group>"; };
+		3EF739AE21BC1AB5000BC787 /* DetailGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGame.swift; sourceTree = "<group>"; };
+		3EF739B221BC1EE7000BC787 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +185,7 @@
 				3E78AA20216F9B300058B790 /* gameModel.swift */,
 				3E78AA22216F9D920058B790 /* gameModelData.swift */,
 				3E9112E421B495C100B35435 /* DatabaseManager.swift */,
+				3EF739AE21BC1AB5000BC787 /* DetailGame.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -195,10 +204,10 @@
 		3E78AA25216FAF2B0058B790 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3EF739A921BC1571000BC787 /* Details */,
 				3E624B3E21A086F5005D5F04 /* Basket */,
 				3ECA2D992170F3D800D563EA /* Suggested */,
 				3ECA2D952170F29400D563EA /* PopularCollectionViewController.swift */,
-				3E5FCE8D2176733300FD5DD8 /* ProductDetailViewController.swift */,
 				3E7721F121983BFA00A18695 /* MainMenuViewController.swift */,
 				3E3CD49B2199C46E00D94669 /* ProductsTableViewController.swift */,
 				3E38E26B21A16376004254F9 /* FilterViewController.swift */,
@@ -214,6 +223,17 @@
 				3E02351A216FF23000F58ACB /* SuggestedPageViewController.swift */,
 			);
 			path = Suggested;
+			sourceTree = "<group>";
+		};
+		3EF739A921BC1571000BC787 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				3E5FCE8D2176733300FD5DD8 /* ProductDetailViewController.swift */,
+				3EF739AA21BC15A0000BC787 /* DescriptionViewController.swift */,
+				3EF739AC21BC174C000BC787 /* DetailsTabViewController.swift */,
+				3EF739B221BC1EE7000BC787 /* MapViewController.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,18 +374,22 @@
 				3E71595421AD781000DA9C38 /* BasketTableViewController.swift in Sources */,
 				3E02351B216FF23000F58ACB /* SuggestedPageViewController.swift in Sources */,
 				3E5FCE922176772F00FD5DD8 /* ProductDetailView.swift in Sources */,
+				3EF739AF21BC1AB5000BC787 /* DetailGame.swift in Sources */,
 				3E38E26C21A16376004254F9 /* FilterViewController.swift in Sources */,
 				3E699FF621BBF7060053C64A /* SearchTableViewController.swift in Sources */,
 				3E7721F221983BFA00A18695 /* MainMenuViewController.swift in Sources */,
 				3E624B4021A08808005D5F04 /* BasketCell.swift in Sources */,
+				3EF739B321BC1EE7000BC787 /* MapViewController.swift in Sources */,
 				3E3CD49A2199C19900D94669 /* ProfuctDetailViewCell.swift in Sources */,
 				3E9112E521B495C100B35435 /* DatabaseManager.swift in Sources */,
 				3E78A9F4216F99580058B790 /* ViewController.swift in Sources */,
 				3E5FCE8E2176733300FD5DD8 /* ProductDetailViewController.swift in Sources */,
 				3E78A9F2216F99580058B790 /* AppDelegate.swift in Sources */,
+				3EF739AB21BC15A0000BC787 /* DescriptionViewController.swift in Sources */,
 				3ECA2D962170F29400D563EA /* PopularCollectionViewController.swift in Sources */,
 				3E78AA21216F9B300058B790 /* gameModel.swift in Sources */,
 				3E02351D216FF8B000F58ACB /* SuggestedContentViewController.swift in Sources */,
+				3EF739AD21BC174C000BC787 /* DetailsTabViewController.swift in Sources */,
 				3E3CD49C2199C46E00D94669 /* ProductsTableViewController.swift in Sources */,
 				3ECA2D982170F2BC00D563EA /* PopularCollectionCell.swift in Sources */,
 				3E78AA23216F9D920058B790 /* gameModelData.swift in Sources */,

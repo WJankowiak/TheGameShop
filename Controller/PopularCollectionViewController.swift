@@ -48,8 +48,7 @@ class PopularCollectionViewController: UICollectionViewController {
     {
         if segue.identifier == "showProductDetail" {
             if let indexPath = collectionView?.indexPathsForSelectedItems?.first {
-                let destinationController = segue.destination as! ProductDetailViewController
-                destinationController.product = best[indexPath.row]
+                detailGame = best[indexPath.row]
             }
         }
     }

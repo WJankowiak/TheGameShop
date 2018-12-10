@@ -56,8 +56,7 @@ class ProductsTableViewController: UITableViewController, filterDelegate {
     {
         if segue.identifier == "showProductDetail" {
             if let indexPath = tableView?.indexPathForSelectedRow {
-                let destinationController = segue.destination as! ProductDetailViewController
-                destinationController.product = filteredProducts[indexPath.row]
+                detailGame = filteredProducts[indexPath.row]
             }
         }
         
@@ -115,7 +114,7 @@ class ProductsTableViewController: UITableViewController, filterDelegate {
     }
 
     func addToBasket(index: Int) {
-        basketGames.append(self.filteredProducts[index])
         DatabaseManager.addToBasket(game: self.filteredProducts[index])
+        basketGames.append(self.filteredProducts[index])
     }
 }

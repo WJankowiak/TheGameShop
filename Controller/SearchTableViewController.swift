@@ -48,8 +48,7 @@ class SearchTableViewController: UITableViewController, filterDelegate {
     {
         if segue.identifier == "showProductDetail" {
             if let indexPath = tableView?.indexPathForSelectedRow {
-                let destinationController = segue.destination as! ProductDetailViewController
-                destinationController.product = products[indexPath.row]
+                detailGame = products[indexPath.row]
             }
         }
         

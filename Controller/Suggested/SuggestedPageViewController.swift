@@ -24,8 +24,7 @@ class SuggestedPageViewController: UIViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SuggestedDetail" {
-            let destinationController = segue.destination as! ProductDetailViewController
-            destinationController.product = product
+            detailGame = product
         }
     }
 }
