@@ -13,7 +13,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var Map: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        Map.setRegion(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(detailGame.latitude), longitude: CLLocationDegrees(detailGame.longitude)), latitudinalMeters: 300, longitudinalMeters: 300), animated: true)
+        Map.setRegion(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: CLLocationDegrees(detailGame.latitude), longitude: CLLocationDegrees(detailGame.longitude)), latitudinalMeters: 1000, longitudinalMeters: 1000), animated: true)
         let annotation = MKPointAnnotation()
         annotation.title = "Lokalizacja gry"
         annotation.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(detailGame.latitude),longitude: CLLocationDegrees(detailGame.longitude))

@@ -65,7 +65,6 @@ class DatabaseManager {
                 let errmsg = String (cString: sqlite3_errmsg(db))
                 print ("Error executing insert: \(errmsg)")
             }
-            print ("DATABASE SUCCESS")
         }
     }
     static private func prepareStatement(db: OpaquePointer?, stmt: OpaquePointer?, num: Int32, arg: String) {
@@ -107,7 +106,6 @@ class DatabaseManager {
         }
         
         for g in games {
-            print (g.name, g.description, g.platform,g.type, g.price)
             if g.name == "" {
                 let index = games.index{$0 === g}
                 games.remove(at: index!)

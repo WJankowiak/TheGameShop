@@ -8,7 +8,7 @@
 
 import UIKit
 class ProductsTableViewController: UITableViewController, filterDelegate {
-   
+    var accessoryIndex: Int = 0
     func setFilters(contents: [String]) {
         self.filters = contents
     }
@@ -59,7 +59,10 @@ class ProductsTableViewController: UITableViewController, filterDelegate {
                 detailGame = filteredProducts[indexPath.row]
             }
         }
-        
+        if segue.identifier == "showProductDetail2" {
+                print ("SECOND SEQUE")
+                detailGame = filteredProducts[accessoryIndex]
+        }
     }
     
     @IBAction func goNext(_ sender: Any) {
