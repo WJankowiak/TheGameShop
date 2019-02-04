@@ -14,7 +14,6 @@ class FavouritesController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.estimatedRowHeight = 110
-        print(favouriteGames.count)
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1

@@ -117,7 +117,6 @@
                                     <color key="titleShadowColor" red="0.0" green="1" blue="0.97878283300000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="addToBasketWithSender:" destination="uIE-tD-I5j" eventType="touchUpInside" id="axP-Zp-CJh"/>
                                     <action selector="addToFav:" destination="uIE-tD-I5j" eventType="touchUpInside" id="xOZ-sD-Xla"/>
                                 </connections>
                             </button>
@@ -874,7 +873,6 @@
                                     <outlet property="img" destination="F9p-Rz-8q4" id="h9e-QZ-LG9"/>
                                     <outlet property="name" destination="55S-zj-6Cl" id="wIb-ZQ-YsH"/>
                                     <outlet property="price" destination="1Gx-qM-7xN" id="zqv-sj-Soc"/>
-                                    <outlet property="quantity" destination="UG2-az-JyY" id="MJ4-5p-WDa"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -884,7 +882,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9bA-Bc-mhS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2848.8000000000002" y="-407.0464767616192"/>
+            <point key="canvasLocation" x="2926" y="-407"/>
         </scene>
     </scenes>
     <resources>

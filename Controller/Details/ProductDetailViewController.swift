@@ -44,7 +44,7 @@ class ProductDetailViewController: UIViewController {
             DatabaseManager.removeFromFav(game: detailGame)
             let indexToRemove = favouriteGames.index{$0 === detailGame}
             favouriteGames.remove(at: indexToRemove!)
-            detailGame.isFavourite = true
+            detailGame.isFavourite = false
         }
     }
     

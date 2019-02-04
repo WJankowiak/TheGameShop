@@ -12,6 +12,7 @@ class BasketTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print (basketGames.count)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -23,8 +24,10 @@ class BasketTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print ("size",basketGames.count)
+        print ("In celForRowAt")
         let cell = tableView.dequeueReusableCell(withIdentifier: "BasketCell", for: indexPath) as! BasketCell
+        print ("after deque")
+
         cell.img.image = UIImage(named: basketGames[indexPath.row].imageName)
         cell.name.text = basketGames[indexPath.row].name
         cell.price.text = String(format:"%.2f zł",basketGames[indexPath.row].price)

@@ -28,6 +28,7 @@ class ProductsTableViewController: UITableViewController, filterDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tableView.reloadData()
         
         if let receivedFilters = filters
         {
