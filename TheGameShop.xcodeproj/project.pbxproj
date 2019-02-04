@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2ED5761E21E9F1990081753E /* FavouritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED5761D21E9F1990081753E /* FavouritesController.swift */; };
 		3E02351B216FF23000F58ACB /* SuggestedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E02351A216FF23000F58ACB /* SuggestedPageViewController.swift */; };
 		3E02351D216FF8B000F58ACB /* SuggestedContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E02351C216FF8B000F58ACB /* SuggestedContentViewController.swift */; };
 		3E38E26C21A16376004254F9 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E38E26B21A16376004254F9 /* FilterViewController.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2ED5761D21E9F1990081753E /* FavouritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesController.swift; sourceTree = "<group>"; };
 		3E02351A216FF23000F58ACB /* SuggestedPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedPageViewController.swift; sourceTree = "<group>"; };
 		3E02351C216FF8B000F58ACB /* SuggestedContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedContentViewController.swift; sourceTree = "<group>"; };
 		3E38E26B21A16376004254F9 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				3E3CD49B2199C46E00D94669 /* ProductsTableViewController.swift */,
 				3E38E26B21A16376004254F9 /* FilterViewController.swift */,
 				3E699FF521BBF7060053C64A /* SearchTableViewController.swift */,
+				2ED5761D21E9F1990081753E /* FavouritesController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				3E699FF621BBF7060053C64A /* SearchTableViewController.swift in Sources */,
 				3E7721F221983BFA00A18695 /* MainMenuViewController.swift in Sources */,
 				3E624B4021A08808005D5F04 /* BasketCell.swift in Sources */,
+				2ED5761E21E9F1990081753E /* FavouritesController.swift in Sources */,
 				3EF739B321BC1EE7000BC787 /* MapViewController.swift in Sources */,
 				3E3CD49A2199C19900D94669 /* ProfuctDetailViewCell.swift in Sources */,
 				3E9112E521B495C100B35435 /* DatabaseManager.swift in Sources */,
@@ -565,6 +569,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R984985BRJ;
 				INFOPLIST_FILE = TheGameShop/Info.plist;
@@ -574,6 +579,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = s.TheGameShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -583,6 +589,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R984985BRJ;
 				INFOPLIST_FILE = TheGameShop/Info.plist;
@@ -592,6 +599,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = s.TheGameShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

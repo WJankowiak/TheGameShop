@@ -11,6 +11,7 @@ class ProductsTableViewController: UITableViewController, filterDelegate {
     var accessoryIndex: Int = 0
     func setFilters(contents: [String]) {
         self.filters = contents
+        self.refreshControl=nil
     }
     
     var products : [Game] = []
@@ -21,6 +22,7 @@ class ProductsTableViewController: UITableViewController, filterDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         filteredProducts = products
+        self.tableView.estimatedRowHeight = 110
         tableView.tableFooterView = UIView()
     }
 
@@ -48,6 +50,11 @@ class ProductsTableViewController: UITableViewController, filterDelegate {
         cell.name.text = filteredProducts[indexPath.row].name
         cell.price.text = String(format:"%.2f zł",filteredProducts[indexPath.row].price)
         cell.platform.text = filteredProducts[indexPath.row].platform
+        if filteredProducts[indexPath.row].isFavourite {
+            cell.favourite.image = UIImage(named: "heart2")
+        } else {
+            cell.favourite.image = UIImage(named: "heart1")
+        }
         
         return cell
     }
@@ -104,6 +111,7 @@ class ProductsTableViewController: UITableViewController, filterDelegate {
     }
     
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        print("leadingHasIndex",indexPath.row)
         let insertAction = UIContextualAction(style: .normal, title: "Do Koszyka") {(action, view, handler) in self.addToBasket(index: indexPath.row) }
         insertAction.backgroundColor = UIColor.green
         let configuration = UISwipeActionsConfiguration (actions: [insertAction])
@@ -117,7 +125,23 @@ class ProductsTableViewController: UITableViewController, filterDelegate {
     }
 
     func addToBasket(index: Int) {
+        print ("addToBasket has index: ", index)
         DatabaseManager.addToBasket(game: self.filteredProducts[index])
         basketGames.append(self.filteredProducts[index])
     }
+    @IBAction func addToFav(_ sender: Any) {
+        let buttonPosition:CGPoint = (sender as AnyObject).convert(CGPoint.zero, to:self.tableView)
+        let indexPath = self.tableView.indexPathForRow(at: buttonPosition)
+        if (!filteredProducts[(indexPath!.row)].isFavourite){
+            DatabaseManager.addToFav(game: filteredProducts[(indexPath?.row)!])
+            filteredProducts[indexPath!.row].isFavourite = true
+            self.tableView.reloadData()
+        } else {
+            DatabaseManager.removeFromFav(game: filteredProducts[indexPath!.row])
+            filteredProducts[indexPath!.row].isFavourite = false
+            self.tableView.reloadData()
+            
+        }
+    }
+
 }

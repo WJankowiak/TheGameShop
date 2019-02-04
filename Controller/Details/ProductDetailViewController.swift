@@ -34,5 +34,18 @@ class ProductDetailViewController: UIViewController {
         DatabaseManager.addToBasket(game: detailGame)
         basketGames.append(detailGame)
     }
-
+    @IBAction func addToFav(_ sender: Any) {
+        if !detailGame.isFavourite {
+            DatabaseManager.addToFav(game: detailGame)
+            favouriteGames.append(detailGame)
+            detailGame.isFavourite = true
+        
+        } else {
+            DatabaseManager.removeFromFav(game: detailGame)
+            let indexToRemove = favouriteGames.index{$0 === detailGame}
+            favouriteGames.remove(at: indexToRemove!)
+            detailGame.isFavourite = true
+        }
+    }
+    
 }

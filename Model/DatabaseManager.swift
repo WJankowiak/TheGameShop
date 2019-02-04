@@ -21,12 +21,12 @@ class DatabaseManager {
         if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
             print ("Error opening database")
         }
-        if sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS Games (id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(16),description VARCHAR(255),  imageName TEXT, price FLOAT, platform TEXT, type TEXT, isInBasket Int, latitude FLOAT, longitude FLOAT)", nil, nil, nil) != SQLITE_OK {
+        if sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS Games (id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(16),description VARCHAR(255),  imageName TEXT, price FLOAT, platform TEXT, type TEXT, isInBasket Int, latitude FLOAT, longitude FLOAT, isFavourite INT)", nil, nil, nil) != SQLITE_OK {
             let errmsg = String (cString: sqlite3_errmsg(db)!)
             print ("error creating table: \(errmsg)")
         }
         for game in gameModelData().gamesData {
-            let queryString = "INSERT INTO Games (name, description, imageName, price, platform, type, isInBasket,latitude, longitude) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)"
+            let queryString = "INSERT INTO Games (name, description, imageName, price, platform, type, isInBasket,latitude, longitude, isFavourite) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
             var stmt: OpaquePointer?
             
             if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK {
@@ -57,6 +57,11 @@ class DatabaseManager {
             if sqlite3_bind_int(stmt, 7, game.isInBasket ? 1 : 0) != SQLITE_OK {
                 let errmsg = String (cString: sqlite3_errmsg(db))
                 print ("error preparing bask: \(errmsg)" )
+                return
+            }
+            if sqlite3_bind_int(stmt, 10, game.isFavourite ? 1 : 0) != SQLITE_OK {
+                let errmsg = String (cString: sqlite3_errmsg(db))
+                print ("error preparing fav: \(errmsg)" )
                 return
             }
             
@@ -100,8 +105,9 @@ class DatabaseManager {
             let bask = sqlite3_column_int(stmt, 7) == 1 ? true : false
             let latitude = sqlite3_column_double(stmt, 8)
             let longitude = sqlite3_column_double(stmt, 9)
+            let fav = sqlite3_column_int(stmt, 10) == 1 ? true : false
             if(price != 0){
-                games.append(Game(name_: name, description_: description, imageName_: imageName, price_: price, platform_: platform, type_: type, isInBasket_: bask,latitude_: Float32(latitude), longitude_: Float32(longitude)))
+                games.append(Game(name_: name, description_: description, imageName_: imageName, price_: price, platform_: platform, type_: type, isInBasket_: bask,latitude_: Float32(latitude), longitude_: Float32(longitude),isFavourite_: fav))
             }
         }
         
@@ -136,6 +142,17 @@ class DatabaseManager {
         var games = getAllGames()
         for g in games {
             if g.isInBasket == false {
+                let index = games.index{$0 === g}
+                games.remove(at: index!)
+            }
+        }
+        return games
+    }
+    
+    static func getFavGames() -> [Game] {
+        var games = getAllGames()
+        for g in games {
+            if g.isFavourite == false {
                 let index = games.index{$0 === g}
                 games.remove(at: index!)
             }
@@ -187,5 +204,53 @@ class DatabaseManager {
             print ("Error executing remove from basket: \(errmsg)")
         }
         print ("ADDED SUCCESFULLY")
+    }
+    
+    static func addToFav (game: Game) {
+        let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("GamesDatabase.sqlite")
+        var db: OpaquePointer?
+        if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
+            print ("Error opening database")
+        }
+        let queryString = "UPDATE Games SET isFavourite = 1 WHERE name = \"\(game.name)\""
+        print(queryString)
+        var stmt: OpaquePointer?
+        
+        if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK {
+            let errmsg = String (cString: sqlite3_errmsg(db))
+            print ("error preparing addToFav: \(errmsg)" )
+            return
+        }
+        
+        
+        if sqlite3_step(stmt) != SQLITE_DONE {
+            let errmsg = String (cString: sqlite3_errmsg(db))
+            print ("Error executing addToFav: \(errmsg)")
+        }
+        print ("ADDED SUCCESFULLY")
+    }
+    
+    static func removeFromFav (game: Game) {
+        let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("GamesDatabase.sqlite")
+        var db: OpaquePointer?
+        if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
+            print ("Error opening database")
+        }
+        let queryString = "UPDATE Games SET isFavourite = 0 WHERE name = \"\(game.name)\""
+        print(queryString)
+        var stmt: OpaquePointer?
+        
+        if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK {
+            let errmsg = String (cString: sqlite3_errmsg(db))
+            print ("error preparing remove from Fav: \(errmsg)" )
+            return
+        }
+        
+        
+        if sqlite3_step(stmt) != SQLITE_DONE {
+            let errmsg = String (cString: sqlite3_errmsg(db))
+            print ("Error executing remove from fav: \(errmsg)")
+        }
+        print ("REMOVED SUCCESFULLY")
     }
 }

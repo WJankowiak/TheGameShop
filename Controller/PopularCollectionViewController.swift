@@ -13,10 +13,10 @@ private let reuseIdentifier = "PopularCollectionCell"
 class PopularCollectionViewController: UICollectionViewController {
     var data = DatabaseManager.getAllGames()
     var best = DatabaseManager.getAllGames()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        
     }
 
     override func didReceiveMemoryWarning()
@@ -52,4 +52,5 @@ class PopularCollectionViewController: UICollectionViewController {
             }
         }
     }
+    
 }
